@@ -7,7 +7,6 @@ export function PopulationCard() {
   useEffect(() => {
     const i = setInterval(() => {
       const percentChange = 0.000000001 * (Math.random() - 0.25);
-      console.log(percentChange);
       setPopulation(population - Math.floor(percentChange * population));
     }, 2000);
 
