@@ -15,7 +15,7 @@ export function InfoCard1() {
       <Subtitle>Plan</Subtitle>
       {plan.length === 0 && <Text>Thinking...</Text>}
       {plan.map((p, i) => (
-        <div>
+        <div key={i}>
           {i !== 0 && <Divider />}
           {p}
         </div>
