@@ -4,7 +4,7 @@ export function StatCard3() {
   return (
     <Card>
       {/* Placeholder to set height */}
-      <div className="h-64" />
+      <div className="h-28" />
     </Card>
   );
 }
