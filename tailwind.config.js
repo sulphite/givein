@@ -9,7 +9,12 @@ module.exports = {
   "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-  extend: {},
+    extend: {
+
+      colors: {
+        brand: "#320fa1"
+      }
+    },
   },
   plugins: [],
 }

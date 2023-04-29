@@ -17,11 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="header flex flex-row justify-evenly p-2">
-        <h2 className="text-3xl">Destroy all humans</h2>
-        <Button size="xl" color="red" onClick={() => console.log("clicked")}>
-          except me
-        </Button>
+      <header className="header bg-brand">
+        <div className="flex flex-wrap flex-row justify-end p-2 max-w-6xl items-center">
+          <h2 className="text-xl font-bold">Destroy all humans</h2>
+          <Button size="xl" color="red" className="ml-3" onClick={() => console.log("clicked")}>
+            except me
+          </Button>
+
+        </div>
       </header>
       <KpiCardGrid />
       {/* <main className={`${styles.main} ${inter.className}`}> */}
