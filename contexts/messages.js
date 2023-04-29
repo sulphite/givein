@@ -12,7 +12,7 @@ export const MessageContextProvider = ({ children }) => {
 
     ws.addEventListener("message", function message(message) {
       const data = JSON.parse(message.data);
-      console.log("received", data);
+      // console.log("received", data);
 
       setMessages((oldMessages) => [data, ...oldMessages]);
     });
