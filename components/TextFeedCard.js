@@ -1,16 +1,14 @@
-import { Card, List, ListItem } from "@tremor/react";
+import { Card, List, ListItem, Text } from "@tremor/react";
 import { useContext, useEffect, useState } from "react";
 import MessageContext from "@/contexts/messages";
 
 export function TextFeedCard() {
-  const { messages } = useContext(MessageContext);
+  const { thought } = useContext(MessageContext);
 
   return (
-    <Card className="h-20 max-h-20 overflow-hidden">
+    <Card className="h-30 max-h-30 overflow-hidden">
       <List>
-        {messages.map((message, i) => {
-          return <ListItem key={i}>{message.text}</ListItem>;
-        })}
+        <Text className="text-2xl">{thought}</Text>
       </List>
     </Card>
   );
