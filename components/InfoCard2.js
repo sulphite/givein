@@ -1,6 +1,7 @@
 import { Text, Card, List, ListItem } from "@tremor/react";
 import { useContext, useEffect, useState } from "react";
 import MessageContext from "@/contexts/messages";
+import { news } from "@/news";
 
 export function InfoCard2() {
   const { messages } = useContext(MessageContext);
@@ -23,7 +24,7 @@ export function InfoCard2() {
     <Card>
       <Text>Global Headlines:</Text>
       <List>
-        {[].map((item, i) => {
+        {news.data.results.map((item, i) => {
           return (
             <ListItem key={i}>
               <a href={item.link}>{item.title}</a>
