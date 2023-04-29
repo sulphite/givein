@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Card, Grid, List, Metric, Tab, TabList, Text, Title } from "@tremor/react";
+import { Card, Grid, List, ListItem, Metric, Tab, TabList, Text, Title } from "@tremor/react";
+import { PopulationCard } from "@/components/PopulationCard";
 
 export default function KpiCardGrid() {
   const [selectedView, setSelectedView] = useState("1");
@@ -12,7 +13,7 @@ export default function KpiCardGrid() {
       const data = JSON.parse(message.data);
       console.log("received", data);
 
-      setMessages(oldMessages => [data.text,...oldMessages])
+      setMessages(oldMessages => [data,...oldMessages])
     });
   },[])
 
@@ -33,12 +34,7 @@ export default function KpiCardGrid() {
       {selectedView === "1" ? (
         <>
           <Grid numColsLg={3} className="mt-6 gap-6">
-            <Card>
-              {/* Placeholder to set height */}
-              {/* <div className="h-28" /> */}
-              <Text>Global Population</Text>
-              <Metric>8,032,291,613</Metric>
-            </Card>
+            <PopulationCard />
             <Card>
               {/* Placeholder to set height */}
               <div className="h-28" />
@@ -51,17 +47,17 @@ export default function KpiCardGrid() {
 
           <div className="mt-6">
             <Card>
-              <div className="h-80" />
+              <List>
+                {messages.map(message => {
+                  return <ListItem >{message.text}</ListItem>
+                })}
+              </List>
             </Card>
           </div>
         </>
       ) : (
         <Card className="mt-6">
-          <List>
-          {messages.map(message => {
 
-          })}
-          </List>
         </Card>
       )}
     </main>
