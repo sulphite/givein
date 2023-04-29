@@ -4,10 +4,12 @@ import MessageContext from "@/contexts/messages";
 
 export function InfoCard2() {
   const { messages } = useContext(MessageContext)
-  const [headlines, setHeadlines] = useState([])
+  const [headlines, setHeadlines] = useState([{link: "", title: "Loading..."}])
+
   useEffect(() => {
+    let query = messages.length > 0 && messages[0].plan ? messages[0].plan : undefined;
     fetch("/api/hello").then(response => response.json()).then(data => {
-      console.log(data.data.results)
+      console.log(query)
       setHeadlines(data.data.results)
     })
   },[])
