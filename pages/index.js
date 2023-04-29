@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <header className="header bg-brand">
-        <div className="flex flex-wrap flex-row justify-end p-2 max-w-6xl items-center">
+        <div className="flex flex-wrap flex-row justify-end p-3 max-w-6xl items-center">
           <h2 className="text-xl font-bold">Destroy all humans</h2>
           <Button size="xl" color="red" className="ml-3" onClick={() => console.log("clicked")}>
             except me

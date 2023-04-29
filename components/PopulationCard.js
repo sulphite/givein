@@ -46,7 +46,7 @@ export function PopulationCard() {
         <BadgeDelta deltaType={deltaType}>{populationChange}</BadgeDelta>
       </Flex>
 
-      <Metric>{population.toLocaleString("en")}</Metric>
+      <Metric className="text-brand">{population.toLocaleString("en")}</Metric>
 
       <Text className="mt-4">Danger Level</Text>
       <CategoryBar
