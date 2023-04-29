@@ -24,7 +24,7 @@ export function InfoCard1() {
   // }
 
   return (
-    <Card className="h-64">
+    <Card className="min-h-64">
       <Subtitle>Plan</Subtitle>
       <Text className="text-4xl leading-relaxed">{plan}</Text>
     </Card>
